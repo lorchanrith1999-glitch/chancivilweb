@@ -1,0 +1,58 @@
+========================================================================
+  CHANCIVIL ENGINEERING PLATFORM — DEPLOYMENT & HOSTING GUIDE
+========================================================================
+
+This folder contains the complete, production-ready static build of the
+ChanCivil website (Bilingual Khmer & English Civil Engineering Platform).
+
+------------------------------------------------------------------------
+OPTION 1: RUN LOCALLY ON YOUR COMPUTER (OFFLINE PREVIEW)
+------------------------------------------------------------------------
+Why you cannot double-click "index.html" directly:
+  Modern web browsers block JavaScript ES Modules (<script type="module">)
+  when loaded from "file:///" due to browser CORS security rules.
+
+To run locally in 1 click:
+  1. Simply double-click "Start-Website-Local.bat".
+  2. It will automatically start the lightweight web server and open:
+     http://localhost:4173/
+  3. All features, tools, interactive calculators, and Demo Admin Control
+     will work completely offline!
+
+------------------------------------------------------------------------
+OPTION 2: HOST FOR FREE ON VERCEL (RECOMMENDED - 1 MINUTE)
+------------------------------------------------------------------------
+1. Go to https://vercel.com/ (free account).
+2. Click "Add New" -> "Project" -> drag & drop this entire "dist" folder.
+3. Done! Vercel gives you a free custom URL (e.g., https://chancivil.vercel.app)
+   with instant SSL and global CDN.
+
+------------------------------------------------------------------------
+OPTION 3: HOST FOR FREE ON NETLIFY
+------------------------------------------------------------------------
+1. Go to https://app.netlify.com/drop
+2. Drag and drop this entire "dist" folder into the browser window.
+3. Your website is immediately live!
+   The included "_redirects" file automatically handles all SPA routes.
+
+------------------------------------------------------------------------
+OPTION 4: HOST ON CLOUDFLARE PAGES
+------------------------------------------------------------------------
+1. Go to https://dash.cloudflare.com/ -> Workers & Pages.
+2. Select "Upload assets" and upload this folder.
+
+------------------------------------------------------------------------
+OPTION 5: TRADITIONAL WEB HOSTING (cPanel / Apache / Hostinger)
+------------------------------------------------------------------------
+1. Open your hosting cPanel -> File Manager -> public_html.
+2. Upload and extract all files from this folder.
+3. The included ".htaccess" file automatically rewrites all SPA routes
+   (like /tools, /admin, /articles) to index.html without 404 errors.
+
+------------------------------------------------------------------------
+ADMIN CONTROL CMS:
+------------------------------------------------------------------------
+- URL: /admin
+- Includes both Demo Offline Mode (instant testing with sample data)
+  and optional Supabase cloud connection for production database storage.
+========================================================================
